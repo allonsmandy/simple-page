@@ -48,20 +48,24 @@
                 width: $largura_cenario * 2;
             }
 
-            @keyframes anima_cenario {
-                from {
-                    transform: translateX(-50%) 
-                                translateZ(0); //melhora performance
-                }
-                to {
-                    transform: translateX(0%)
-                                translateZ(0);
-                }
+            .nuvens {
+                @include anima('cenario_nuvens.png', 60s, reverse);
             }
 
-            .nuvens {
-                background-image: url('../imagens/cenario_nuvens.png');
-                animation: anima_cenario 10s linear infinite;
+            .casas {
+                @include anima('cenario_casas.png', 30s, normal);
+            }
+
+            .rua {
+                @include anima('cenario_rua.png', 30s, normal);
+            }
+
+            .carrosCima {
+                @include anima('cenario_carrosCima.png', 30s, reverse);
+            }
+
+            .carrosBaixo {
+                 @include anima('cenario_carrosBaixo.png', 15s, normal);
             }
         }
     }

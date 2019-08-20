@@ -1,0 +1,14 @@
+@mixin anima($imagem, $tempo, $reverse) {
+  @keyframes anima_cenario {
+    from {
+      transform: translateX(-50%) translateZ(0); //melhora performance
+    }
+    to {
+      transform: translateX(0%) translateZ(0);
+    }
+  }
+
+  background-image: url("../imagens/#{$imagem}");
+  animation: anima_cenario #{$tempo} linear infinite;
+  animation-direction: $reverse;
+}
