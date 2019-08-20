@@ -1,0 +1,5 @@
+.header-animado {
+    $h: 300px;
+    background-color: lighten($main-color, 10%);
+    height: $h;
+}

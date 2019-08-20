@@ -8,7 +8,7 @@
     "start": "echo startando baby :3",
     "prestart": "echo prestart",
     "poststart": "echo poststart",
-    "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap/ && cp -r node_modules/font-awesome/css src/components/font-awesome/ && cp -r node_modules/font-awesome/fonts src/components/font-awesome/",
+    "postinstall": "cp -r node_modules/bootstrap/dist src/components/bootstrap && cp -r node_modules/font-awesome/css/ src/components/font-awesome && cp -r node_modules/font-awesome/fonts src/components/font-awesome",
     "gulp": "gulp"
   },
   "repository": {
@@ -23,10 +23,11 @@
   "homepage": "https://github.com/allonsmandy/simple-page#readme",
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "font-awesome": "^4.7.0"
+    "font-awesome": "^4.7.0",
+    "gulp-uglifycss": "^1.1.0"
   },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-sass": "^3.2.1"
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
   }
 }
