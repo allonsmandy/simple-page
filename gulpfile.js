@@ -34,6 +34,6 @@ gulp.task('server', function() {
         }
     })
 
-    gulp.watch('./src/sass/**/*').on('change', browserSync.reload);
+    gulp.watch('./src/**/*').on('change', browserSync.reload);
 
 })
