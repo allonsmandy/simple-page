@@ -12,3 +12,21 @@
   animation: anima_cenario #{$tempo} linear infinite;
   animation-direction: $reverse;
 }
+
+@mixin sombra($dir, $angle, $distance){
+        content: '';
+        z-index: -1;
+        position: absolute;
+        width: 50%;
+        height: 20px;
+        bottom: 12px;
+        box-shadow: 0 15px 10px #777;
+        @if $dir == 'esq'{
+            transform: rotate($angle * -1);
+            left: $distance;            
+        } @else {
+            transform: rotate($angle);
+            right: $distance;
+        }
+    }
+
