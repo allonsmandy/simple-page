@@ -1,5 +1,6 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:500,700|Roboto+Slab:100,400,700");
 .header-nav {
-  background-color: #64a59a; }
+  background-color: #84b8af; }
   .js .header-nav {
     height: 50px; }
     .js .header-nav .container {
@@ -44,6 +45,32 @@
     .menu-oppened .header-nav__menu {
       display: block; }
 
+h1, h2, h3, h4, h5, h6, .title {
+  font-family: 'Roboto Slab';
+  font-weight: bold; }
+
 .header-animado {
-  background-color: #84b8af;
-  height: 300px; }
+  background-color: #64a59a;
+  margin: 0;
+  padding: 96px 0 0 0; }
+  .header-animado__title {
+    color: #00151a;
+    font-size: 38px;
+    font-weight: bold; }
+  .header-animado__subtitle {
+    color: white;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.5; }
+  .header-animado__ilustra {
+    background-image: url("../imagens/cenario_all_960.png");
+    height: 150px;
+    background-size: auto 100%;
+    background-position: center top; }
+    @media screen and (min-width: 480px) {
+      .header-animado__ilustra {
+        background-image: url("../imagens/cenario_all_1530.png"); } }
+    @media screen and (min-width: 960px) {
+      .header-animado__ilustra {
+        background-image: url("../imagens/cenario_bg.png");
+        height: 300px; } }

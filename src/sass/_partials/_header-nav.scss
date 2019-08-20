@@ -1,6 +1,6 @@
 .header-nav {
     $h: 50px;
-    background-color: $main-color;
+    background-color: lighten($main-color, 10%);
 
     .js & {
         height: $h;
