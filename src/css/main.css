@@ -1,5 +1,26 @@
 .header-nav {
   background-color: #64a59a; }
+  .header-nav__logo {
+    display: inline-block;
+    max-width: 350px;
+    height: 50px;
+    position: relative;
+    top: 10px; }
+  .header-nav__hamburgger {
+    display: none; }
+  .header-nav__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0; }
+    .header-nav__menu a {
+      color: white;
+      display: block;
+      font-size: 1.5em;
+      border-top: 1px solid #58988d;
+      padding: 1em; }
+      .header-nav__menu a:hover {
+        background: #5c9e93;
+        text-decoration: none; }
 
 .header-animado {
   background-color: #84b8af;
