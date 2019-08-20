@@ -52,7 +52,8 @@ h1, h2, h3, h4, h5, h6, .title {
 .header-animado {
   background-color: #64a59a;
   margin: 0;
-  padding: 96px 0 0 0; }
+  padding: 96px 0 0 0;
+  overflow: hidden; }
   .header-animado__title {
     color: #00151a;
     font-size: 38px;
@@ -67,10 +68,28 @@ h1, h2, h3, h4, h5, h6, .title {
     height: 150px;
     background-size: auto 100%;
     background-position: center top; }
+    .header-animado__ilustra > div {
+      display: none; }
     @media screen and (min-width: 480px) {
       .header-animado__ilustra {
         background-image: url("../imagens/cenario_all_1530.png"); } }
     @media screen and (min-width: 960px) {
       .header-animado__ilustra {
         background-image: url("../imagens/cenario_bg.png");
-        height: 300px; } }
+        height: 300px;
+        position: relative; }
+        .header-animado__ilustra > div {
+          display: block;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 4800px; }
+      @keyframes anima_cenario {
+        from {
+          transform: translateX(-50%) translateZ(0); }
+        to {
+          transform: translateX(0%) translateZ(0); } }
+        .header-animado__ilustra .nuvens {
+          background-image: url("../imagens/cenario_nuvens.png");
+          animation: anima_cenario 10s linear infinite; } }
