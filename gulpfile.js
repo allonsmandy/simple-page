@@ -3,6 +3,7 @@
 var gulp = require('gulp'); //carrega o modulo instalado e armazena nesta variavel
 var sass = require('gulp-sass');
 var uglifycss = require('gulp-uglifycss');
+var browserSync = require('browser-sync');
 
 //tarefinha
 gulp.task('sass', function() {
@@ -20,7 +21,19 @@ gulp.task('css', function() {
 })
 
 //monitorando arquivos
-gulp.task('listen', function() {
-    gulp.watch('./src/sass/**/*.scss', gulp.series('sass')); //arquivos que serao monitorados e se for executado uma alteração ele roda a tarefa anterior
-    gulp.watch('./src/css/*.css', gulp.series('css'))
-});
+// gulp.task('listen', function() {
+//     gulp.watch('./src/sass/**/*.scss', gulp.series('sass')); //arquivos que serao monitorados e se for executado uma alteração ele roda a tarefa anterior
+//     gulp.watch('./src/css/*.css', gulp.series('css'))
+// });
+
+//reload
+gulp.task('server', function() {
+    browserSync.init({
+        server: {
+            baseDir: 'src'
+        }
+    })
+
+    gulp.watch('./src/sass/**/*').on('change', browserSync.reload);
+
+})
