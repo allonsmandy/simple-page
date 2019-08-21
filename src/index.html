@@ -10,24 +10,8 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <nav class="header-nav">
-        <div class="container">
-            <a href="index.html" class="header-nav__logo">
-                <img src="imagens/logo.svg" alt="Logotipo">
-            </a>
-            <button aria-controls="main-menu" class="header-nav__hamburgger" type="button" aria-expanded="false">
-                <div class="header-nav__hamburggerParties">
-                    <span class="sr-only">Menu</span>
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </div>
-            </button>
-            <ul class="header-nav__menu" id="main-menu" aria-expanded="false">
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Sobre mim</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </div>
-    </nav>
+
+    @@include('./inc/nav.html')
 
     <div class="jumbotron header-animado">
         <div class="container">
@@ -49,33 +33,35 @@
             <h2>Últimos Trabalhos</h2>
         </div>
         <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-4">
-                <div class="thumbnail card-portfolio">
-                    <div class="card-portfolio__imagem">
-                        <img src="imagens/portfolio/01.jpg" alt="">
-                    </div>
-                    <div class="caption card-portfolio__caption">
-                        <h3 class="card-portfolio__title">Titulo do trabalho</h3>
-                        <p class="card-portfolio__text">pequeno textinho</p>
-                        <p><a href="#" class="card-portfolio__btn btn btn-primary pull-right" role="button">Ver mais</a></p>
-                    </div>
-                </div>
-            </div>
+            
+            @@loop('./inc/card-portfolio.html', [
+            {
+                "titulo": "titulo alteradooo",
+                "imagem": "imagens/portfolio/01.jpg",
+                "texto": "texto",
+                "link": "#",
+                "alt": "textinho alternativo"
+            },
+            {
+                "titulo": "titulo 2",
+                "imagem": "imagens/portfolio/02.jpg",
+                "texto": "texto",
+                "link": "#",
+                "alt": "textinho alternativo"
+            },
+            {
+                "titulo": "olá mundo",
+                "imagem": "imagens/portfolio/03.jpg",
+                "texto": "texto",
+                "link": "#",
+                "alt": "textinho alternativo"
+            }
+            ])
+
         </div> <!-- row -->
     </section> <!-- container -->
 
-    <footer class="footer">
-        <div class="container">
-            <p class="footer__paragrafo text-right">Social:</p>
-            <ul class="footer__social list-inline">
-                    <li class="footer__social-item"><a href="#" class="btn-social btn-outline"><img src="./imagens/facebook.svg" alt=""></i></i></a></li>
-                    <li class="footer__social-item"><a href="#" class="btn-social btn-outline"><img src="./imagens/google-plus.svg" alt=""></i></a></li>
-                    <li class="footer__social-item"><a href="#" class="btn-social btn-outline"><img src="./imagens/twitter.svg" alt=""></i></a></li>
-                    <li class="footer__social-item"><a href="#" class="btn-social btn-outline"><img src="./imagens/linkedin2.svg" alt=""></i></a></li>
-                    <li class="footer__social-item"><a href="#" class="btn-social btn-outline"><img src="./imagens/dribbble.svg" alt=""></i></a></li>
-            </ul>
-        </div>
-    </footer>
+    @@include('./inc/footer.html')
     <script src="./javascript/main.js"></script>
     <script src="./javascript/menu.js"></script>
 </body>
