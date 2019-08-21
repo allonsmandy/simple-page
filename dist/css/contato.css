@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 form {
   padding-top: 30px; }
   form input[type="text"],
@@ -17,7 +18,7 @@ form {
     color: #4F9A91;
     font-weight: bold;
     text-transform: uppercase;
-    text-decoration: underline wavy #b9496b; }
+    text-decoration: underline wavy #b9495c; }
   form input[type="text"],
   form input[type="email"] {
     padding: 15px; }

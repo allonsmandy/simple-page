@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
 .js.menu-opened {
   overflow: hidden; }
   .js.menu-opened:after {
@@ -13,7 +14,7 @@
     background: rgba(0, 0, 0, 0.5); }
 
 .header-nav {
-  background-color: #c76e89; }
+  background-color: #c76e7d; }
   .js .header-nav {
     height: 50px; }
     .js .header-nav .container {
@@ -40,7 +41,7 @@
       font-size: 2em;
       outline: none; }
       .js .header-nav__hamburgger:hover, .js .header-nav__hamburgger:focus {
-        background: #c05b7a; }
+        background: #c05b6c; }
       @media screen and (min-width: 680px) {
         .js .header-nav__hamburgger {
           display: none; } }
@@ -52,14 +53,14 @@
       color: white;
       display: block;
       font-size: 1em;
-      border-top: 1px solid #a84160;
+      border-top: 1px solid #a84152;
       padding: 1em; }
       .header-nav__menu a:hover {
-        background: #b9496b;
+        background: #b9495c;
         text-decoration: none; }
     @media screen and (max-width: 680px) {
       .js .header-nav__menu {
-        background: #963a55;
+        background: #963a49;
         position: fixed;
         top: 50px;
         z-index: 10;
@@ -89,7 +90,7 @@ h1, h2, h3, h4, h5, h6, .title {
   font-weight: 300; }
 
 .header-animado {
-  background-color: #b9496b;
+  background-color: #b9495c;
   margin: 0;
   padding: 30px 0 0 0;
   overflow: hidden;
@@ -115,56 +116,32 @@ h1, h2, h3, h4, h5, h6, .title {
       top: 0;
       left: 0;
       width: 4800px; }
+
+@keyframes anima_cenario {
+  from {
+    transform: translateX(-50%) translateZ(0); }
+  to {
+    transform: translateX(0%) translateZ(0); } }
     .header-animado__ilustra .nuvens {
       background-image: url("../imagens/cenario_nuvens.png");
       animation: anima_cenario 60s linear infinite;
       animation-direction: reverse; }
-
-@keyframes anima_cenario {
-  from {
-    transform: translateX(-50%) translateZ(0); }
-  to {
-    transform: translateX(0%) translateZ(0); } }
     .header-animado__ilustra .casas {
       background-image: url("../imagens/cenario_casas.png");
       animation: anima_cenario 30s linear infinite;
       animation-direction: normal; }
-
-@keyframes anima_cenario {
-  from {
-    transform: translateX(-50%) translateZ(0); }
-  to {
-    transform: translateX(0%) translateZ(0); } }
     .header-animado__ilustra .rua {
       background-image: url("../imagens/cenario_rua.png");
       animation: anima_cenario 30s linear infinite;
       animation-direction: normal; }
-
-@keyframes anima_cenario {
-  from {
-    transform: translateX(-50%) translateZ(0); }
-  to {
-    transform: translateX(0%) translateZ(0); } }
     .header-animado__ilustra .carrosCima {
       background-image: url("../imagens/cenario_carrosCima.png");
       animation: anima_cenario 30s linear infinite;
       animation-direction: reverse; }
-
-@keyframes anima_cenario {
-  from {
-    transform: translateX(-50%) translateZ(0); }
-  to {
-    transform: translateX(0%) translateZ(0); } }
     .header-animado__ilustra .carrosBaixo {
       background-image: url("../imagens/cenario_carrosBaixo.png");
       animation: anima_cenario 15s linear infinite;
       animation-direction: normal; }
-
-@keyframes anima_cenario {
-  from {
-    transform: translateX(-50%) translateZ(0); }
-  to {
-    transform: translateX(0%) translateZ(0); } }
     @media screen and (min-width: 960px) {
       .header-animado__ilustra {
         height: 300px; } }
@@ -178,22 +155,34 @@ h1, h2, h3, h4, h5, h6, .title {
     content: '';
     z-index: -1;
     position: absolute;
+    background: #4F9A91;
     width: 50%;
     height: 20px;
     bottom: 12px;
-    box-shadow: 0 15px 10px #777;
+    box-shadow: 0px 15px 10px #4F9A91;
     transform: rotate(-3deg);
     left: 5px; }
   .card-portfolio:after {
     content: '';
     z-index: -1;
     position: absolute;
+    background: #4F9A91;
     width: 50%;
     height: 20px;
     bottom: 12px;
-    box-shadow: 0 15px 10px #777;
+    box-shadow: 0px 15px 10px #4F9A91;
     transform: rotate(3deg);
     right: 5px; }
+  .card-portfolio__title {
+    text-decoration: underline wavy #b9495c;
+    font-family: "Quicksand", sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    background: #f0f1d6;
+    padding: 5px 0 10px 0;
+    margin-bottom: 0; }
   .card-portfolio__imagem {
     height: 230px;
     overflow: hidden; }
@@ -203,15 +192,20 @@ h1, h2, h3, h4, h5, h6, .title {
       transition: opacity .3s linear; }
   .card-portfolio:hover img {
     opacity: 1; }
+  .card-portfolio__text {
+    padding: 20px;
+    text-align: center; }
   .card-portfolio__btn {
-    background: #b9496b;
+    background: #b9495c;
     display: block;
-    position: relative; }
+    position: relative;
+    top: -15px;
+    border: none; }
     .card-portfolio__btn:hover {
-      background: #df235c; }
+      background: #df2343; }
 
 .footer {
-  background: #e4b8c5;
+  background: #e4b8bf;
   color: white;
   padding: 1em 0; }
   .footer__social {

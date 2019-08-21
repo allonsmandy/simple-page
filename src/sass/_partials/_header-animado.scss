@@ -33,6 +33,15 @@
             width: $largura_cenario * 2;
         }
 
+        @keyframes anima_cenario {
+            from {
+              transform: translateX(-50%) translateZ(0); //melhora performance
+            }
+            to {
+              transform: translateX(0%) translateZ(0);
+            }
+          }
+
         .nuvens {
             @include anima('cenario_nuvens.png', 60s, reverse);
         }
