@@ -1,5 +1,22 @@
+.js.menu-opened {
+    overflow: hidden;
+    
+    &:after {
+        content: '';
+        display: block;
+        position: fixed;
+        top: 50px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5) !important;
+    }
+}
+
 .header-nav {
     $h: 50px;
+    $breakpoint: 680px;
+
     background-color: lighten($main-color, 10%);
 
     .js & {
@@ -16,7 +33,7 @@
         height: $h;
         position: relative;
         top: 10px;
-        z-index: 1;
+        z-index: 20;
 
         img  {
             max-width: 100%;
@@ -39,6 +56,10 @@
             &:hover, &:focus {
                 background: lighten($main-color, 5%);
             }
+
+            @media screen and (min-width: #{$breakpoint}){
+                display: none;
+            }
         }
     }
 
@@ -55,17 +76,49 @@
             padding: 1em;
 
             &:hover {
-                background: darken($main-color, 3%);
+                background: $main-color;
                 text-decoration: none;
             }
         }
 
         .js & {
-            display: none;
+            @media screen and (max-width: #{$breakpoint}) {
+                background: darken($main-color, 10%);
+                position: fixed;
+                top: $h;
+                z-index: 10;
+                left: -100%;
+                width: 80%;
+                bottom: 0;
+                transition: left .55s ease-out;
+            }
+
         }
 
-        .menu-oppened & {
+        .menu-opened & {
             display: block;
+
+            @media screen and (max-width: #{$breakpoint}) {
+                left: 0;
+            }
+        }
+
+        
+        @media screen and (min-width: #{$breakpoint}) {
+            display: inline-flex;
+            float: right;
+            clear: both; //EU NAO QUERIA USAR ISSO DESCULPA
+            height: $h;
+
+            li {
+                display: inline-block !important;
+
+                a {
+                    border-top: none;
+                    font-size: 16px !important;
+
+                }
+            }
         }
     }
 }
