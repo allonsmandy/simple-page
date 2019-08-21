@@ -1,1 +1,23 @@
-$main-color: #64a59a;
+@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+
+// *---------------------------*
+// *-------- cores ------------*
+// *---------------------------*
+$main-color: #b9496b;
+
+// *---------------------------*
+// *-------- tamanhos ---------*
+// *---------------------------*
+
+$height-nav: 50px;
+$breakpoint: 680px;
+$height-nav-animado: 300px;
+$largura_cenario: 2400px;
+
+// *---------------------------*
+// *-------- fontes -----------*
+// *---------------------------*
+
+$fonte-principal: 'Staatliches', cursive;
+$fonte-secundaria: 'Satisfy', cursive;

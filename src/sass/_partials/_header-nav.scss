@@ -14,13 +14,11 @@
 }
 
 .header-nav {
-    $h: 50px;
-    $breakpoint: 680px;
 
     background-color: lighten($main-color, 10%);
 
     .js & {
-        height: $h;
+        height: $height-nav;
 
         .container {
             height: 100%;
@@ -30,7 +28,7 @@
     &__logo {
         display: inline-block;
         max-width: 350px;
-        height: $h;
+        height: $height-nav;
         position: relative;
         top: 10px;
         z-index: 20;
@@ -85,7 +83,7 @@
             @media screen and (max-width: #{$breakpoint}) {
                 background: darken($main-color, 10%);
                 position: fixed;
-                top: $h;
+                top: $height-nav;
                 z-index: 10;
                 left: -100%;
                 width: 80%;
@@ -108,7 +106,7 @@
             display: inline-flex;
             float: right;
             clear: both; //EU NAO QUERIA USAR ISSO DESCULPA
-            height: $h;
+            height: $height-nav;
 
             li {
                 display: inline-block !important;

@@ -1,72 +1,58 @@
 .header-animado {
-    $h: 300px;
-    $largura_cenario: 2400px;
-
     background-color: $main-color;
     margin: 0;
-    padding: 96px 0 0 0;
+    padding: 30px 0 0 0;
     overflow: hidden;
 
     &__title {
-        color: #00151a;
-        font-size: 38px;
-        font-weight: bold;
+        color: #d5d68b;
+        font-size: 48px;
+        font-family: $fonte-secundaria;
     }
 
     &__subtitle {
         color: white;
-        font-weight: 500;
-        font-size: 30px;
+        font-weight: 100;
+        font-size: 26px;
         line-height: 1.5;
+        letter-spacing: 2px;
     }
 
     &__ilustra {
-        background-image: url('../imagens/cenario_all_960.png');
-        height: $h/2;
-        background-size: auto 100%;
-        background-position: center top;
+        height: $height-nav-animado/2;
+        position: relative;
 
         &>div {
-            display: none;
+            display: block;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $largura_cenario * 2;
         }
 
-        @media screen and (min-width: 480px) {
-            background-image: url('../imagens/cenario_all_1530.png');
+        .nuvens {
+            @include anima('cenario_nuvens.png', 60s, reverse);
         }
-
+    
+        .casas {
+            @include anima('cenario_casas.png', 30s, normal);
+        }
+    
+        .rua {
+            @include anima('cenario_rua.png', 30s, normal);
+        }
+    
+        .carrosCima {
+            @include anima('cenario_carrosCima.png', 30s, reverse);
+        }
+    
+        .carrosBaixo {
+             @include anima('cenario_carrosBaixo.png', 15s, normal);
+        }
+        
         @media screen and (min-width: 960px) {
-            background-image: url('../imagens/cenario_bg.png');
-            height: $h;
-            position: relative;
-
-            &>div {
-                display: block;
-                height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: $largura_cenario * 2;
-            }
-
-            .nuvens {
-                @include anima('cenario_nuvens.png', 60s, reverse);
-            }
-
-            .casas {
-                @include anima('cenario_casas.png', 30s, normal);
-            }
-
-            .rua {
-                @include anima('cenario_rua.png', 30s, normal);
-            }
-
-            .carrosCima {
-                @include anima('cenario_carrosCima.png', 30s, reverse);
-            }
-
-            .carrosBaixo {
-                 @include anima('cenario_carrosBaixo.png', 15s, normal);
-            }
+            height: $height-nav-animado;
         }
     }
 }
