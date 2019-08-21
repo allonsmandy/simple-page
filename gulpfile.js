@@ -15,7 +15,8 @@ gulp.task('copy', function() {
 gulp.task('sass', function() {
     return gulp.src('./src/sass/**/*.scss') //pega os arquivos de origem 
         .pipe(sass().on('error', sass.logError)) //faz um tratamento utilizando o gulp-sass
-        .pipe(gulp.dest('./dist/css')); //manda pra saida
+        .pipe(gulp.dest('./dist/css/')); //manda pra saida
+
 })
 
 gulp.task('css', function() {
@@ -26,11 +27,10 @@ gulp.task('css', function() {
         .pipe(gulp.dest('./dist/css/'));
 })
 
-//monitorando arquivos
-// gulp.task('listen', function() {
-//     gulp.watch('./src/sass/**/*.scss', gulp.series('sass')); //arquivos que serao monitorados e se for executado uma alteração ele roda a tarefa anterior
-//     gulp.watch('./src/css/*.css', gulp.series('css'))
-// });
+gulp.task('listen', function() {
+    gulp.watch('./src/sass/**/*.scss', gulp.series('sass')); //arquivos que serao monitorados e se for executado uma alteração ele roda a tarefa anterior
+    gulp.watch('./src/css/*.css', gulp.series('css'))
+});
 
 gulp.task('html', function(){
     return gulp.src([
