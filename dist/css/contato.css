@@ -1,16 +1,30 @@
 @import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Staatliches&display=swap");
-input[type="text"],
-input[type="email"], textarea.form-control {
-  margin-bottom: 25px;
-  transition: background .3s; }
-  input:focus[type="text"],
-  input:focus[type="email"], textarea.form-control:focus {
-    background: #97886c; }
-
-input[type="text"],
-input[type="email"] {
-  padding: 25px 15px; }
-
-textarea.form-control {
-  height: 200px; }
+form {
+  padding-top: 30px; }
+  form input[type="text"],
+  form input[type="email"], form textarea.form-control {
+    margin-bottom: 25px;
+    transition: background .3s;
+    border: none;
+    border-bottom: 1px solid black; }
+    form input:focus[type="text"],
+    form input:focus[type="email"], form textarea.form-control:focus {
+      background: #f0f1d6;
+      color: black;
+      box-shadow: none; }
+  form label {
+    color: #4F9A91;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline wavy #b9496b; }
+  form input[type="text"],
+  form input[type="email"] {
+    padding: 15px; }
+  form textarea.form-control {
+    height: 200px; }
+  form .btn-style {
+    background: #d5d68b;
+    border: 1px solid black; }
+    form .btn-style:hover {
+      box-shadow: 5px 5px 0px black; }

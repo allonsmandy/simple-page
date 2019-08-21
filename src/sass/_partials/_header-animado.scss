@@ -3,9 +3,10 @@
     margin: 0;
     padding: 30px 0 0 0;
     overflow: hidden;
+    border-radius: 0;
 
     &__title {
-        color: #d5d68b;
+        color: $secondary-color;
         font-size: 48px;
         font-family: $fonte-secundaria;
     }
@@ -16,6 +17,7 @@
         font-size: 26px;
         line-height: 1.5;
         letter-spacing: 2px;
+        margin-bottom: 30px;
     }
 
     &__ilustra {

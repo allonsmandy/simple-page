@@ -10,7 +10,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.5) !important; }
+    background: rgba(0, 0, 0, 0.5); }
 
 .header-nav {
   background-color: #c76e89; }
@@ -37,7 +37,8 @@
       border: none;
       background: transparent;
       color: white;
-      font-size: 2em; }
+      font-size: 2em;
+      outline: none; }
       .js .header-nav__hamburgger:hover, .js .header-nav__hamburgger:focus {
         background: #c05b7a; }
       @media screen and (min-width: 680px) {
@@ -50,7 +51,7 @@
     .header-nav__menu a {
       color: white;
       display: block;
-      font-size: 1.5em;
+      font-size: 1em;
       border-top: 1px solid #a84160;
       padding: 1em; }
       .header-nav__menu a:hover {
@@ -91,7 +92,8 @@ h1, h2, h3, h4, h5, h6, .title {
   background-color: #b9496b;
   margin: 0;
   padding: 30px 0 0 0;
-  overflow: hidden; }
+  overflow: hidden;
+  border-radius: 0; }
   .header-animado__title {
     color: #d5d68b;
     font-size: 48px;
@@ -101,7 +103,8 @@ h1, h2, h3, h4, h5, h6, .title {
     font-weight: 100;
     font-size: 26px;
     line-height: 1.5;
-    letter-spacing: 2px; }
+    letter-spacing: 2px;
+    margin-bottom: 30px; }
   .header-animado__ilustra {
     height: 150px;
     position: relative; }

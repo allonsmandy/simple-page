@@ -9,12 +9,11 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: rgba(0, 0, 0, 0.5) !important;
+        background: rgba(0, 0, 0, 0.5);
     }
 }
 
 .header-nav {
-
     background-color: lighten($main-color, 10%);
 
     .js & {
@@ -50,6 +49,7 @@
             background: transparent;
             color: white;
             font-size: 2em;
+            outline: none;
 
             &:hover, &:focus {
                 background: lighten($main-color, 5%);
@@ -69,7 +69,7 @@
         a {
             color: white;
             display: block;
-            font-size: 1.5em;
+            font-size: 1em;
             border-top: 1px solid darken($main-color, 5%);
             padding: 1em;
 

@@ -1,19 +1,43 @@
-%inputContato {
+form {
+    padding-top: 30px;
+
+& %inputContato {
     margin-bottom: 25px;
     transition: background .3s;
+    border: none;
+    border-bottom: 1px solid black;
 
     &:focus {
-        background: #97886c;
+        background: lighten($secondary-color, 20%);
+        color: black;
+        box-shadow: none;
     }
+}
+
+label {
+    color: $outra-cor;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: underline wavy $main-color;
 }
 
 input[type="text"],
 input[type="email"] {
-    padding: 25px 15px;
+    padding: 15px;
     @extend %inputContato;
 }
 
 textarea.form-control {
     height: 200px;
     @extend %inputContato;
+}
+
+.btn-style {
+    background: $secondary-color;
+    border: 1px solid black;
+
+    &:hover {
+        box-shadow: 5px 5px 0px black;
+    }
+}
 }
