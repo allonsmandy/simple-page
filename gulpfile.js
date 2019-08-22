@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp = require('gulp'); //carrega o modulo instalado e armazena nesta variavel
+var gulp = require('gulp');
 var sass = require('gulp-sass');
 var uglifycss = require('gulp-uglifycss');
 var include = require('gulp-file-include');
@@ -11,11 +11,11 @@ gulp.task('copy', function() {
         .pipe(gulp.dest('dist'))
 })
 
-//tarefinha
+
 gulp.task('sass', function() {
-    return gulp.src('./src/sass/**/*.scss') //pega os arquivos de origem 
-        .pipe(sass().on('error', sass.logError)) //faz um tratamento utilizando o gulp-sass
-        .pipe(gulp.dest('./dist/css/')); //manda pra saida
+    return gulp.src('./src/sass/**/*.scss') 
+        .pipe(sass().on('error', sass.logError)) 
+        .pipe(gulp.dest('./dist/css/')); 
 
 })
 

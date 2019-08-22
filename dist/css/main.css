@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Satisfy&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Staatliches&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+* {
+  box-sizing: border-box; }
+
 .js.menu-opened {
   overflow: hidden; }
   .js.menu-opened:after {
@@ -205,21 +208,26 @@ h1, h2, h3, h4, h5, h6, .title {
       background: #df2343; }
 
 .footer {
-  background: #e4b8bf;
-  color: white;
-  padding: 1em 0; }
+  background: #e4b8bf; }
+  .footer__paragrafo p {
+    margin-bottom: 0;
+    text-align: center;
+    color: black;
+    display: block;
+    padding: 10px; }
   .footer__social {
-    overflow: auto;
-    padding: 0;
-    width: 100%; }
+    display: flex;
+    justify-content: center;
+    padding-top: 10px; }
     .footer__social-item {
-      width: 20%;
-      float: left;
-      box-sizing: border-box;
       list-style: none;
       padding: 0; }
       .footer__social-item a {
         font-size: 1.5em;
         color: white;
         display: block;
-        text-align: right; }
+        padding: 10px;
+        border: 1px solid transparent; }
+        .footer__social-item a:hover {
+          background: #d5d68b;
+          border: 1px solid #4F9A91; }
