@@ -33,7 +33,10 @@ gulp.task('listen', function() {
 });
 
 gulp.task('html', function(){
-    return gulp.src('./src/**/*.html')
+    return gulp.src([
+        './src/**/*.html',
+        '!src/inc/**'
+    ])
         .pipe(include())
         .pipe(gulp.dest('./dist/'))
 })

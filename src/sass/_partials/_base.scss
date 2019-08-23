@@ -1,4 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Staatliches&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+
 h1, h2, h3, h4, h5, h6, .title {
     font-family: $fonte-principal;
     font-weight: 300;
+}
+
+// barrinha fofinha
+
+::-webkit-scrollbar-track {
+    background-color: $outra-cor;
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: lighten($secondary-color, 10%);
+}
+
+//seleção fofinha
+::selection {
+    background: $secondary-color;
+    color: $main-color;
 }
