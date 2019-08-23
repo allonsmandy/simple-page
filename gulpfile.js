@@ -1,5 +1,7 @@
 'use strict';
 
+// Variaveis
+// --------------------------------------------------
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var include = require('gulp-file-include');
@@ -12,12 +14,14 @@ var concat = require('gulp-concat');
 var browserSync = require('browser-sync');
 
 // Limpa a pasta dist
+// --------------------------------------------------
 gulp.task('clean', function(){
     return gulp.src('dist')
         .pipe(clean());
 })
 
-//faz a copia da pasta src para a dist
+// Copia as pastas de src para a pasta dist
+// --------------------------------------------------
 gulp.task('copy', function() {
     return gulp.src([
             'src/components/**/*', 
@@ -28,23 +32,18 @@ gulp.task('copy', function() {
         .pipe(gulp.dest('dist'))
 })
 
-// pega o código sass e coloca na pasta destino de css
+// Pega todos os arquivos .scss e faz o tratamento, jogando ele em dist/css
+// --------------------------------------------------
 gulp.task('sass', function() {
     return gulp.src('./src/sass/**/*.scss') 
-        .pipe(sass()) 
-        .pipe(autoprefixer())
-        .pipe(cssnano())
+        .pipe(sass()) //trata o scss para css
+        .pipe(autoprefixer()) //adiciona prefixos em regras de css baseado no Can I Use
+        .pipe(cssnano()) // otimiza o css
         .pipe(gulp.dest('./dist/css/')); 
 })
 
-
-gulp.task('listen', function() {
-    gulp.watch('./src/sass/**/*.scss', gulp.series('sass')); //arquivos que serao monitorados e se for executado uma alteração ele roda a tarefa anterior
-    gulp.watch('./src/**/*.html', gulp.series('html'))
-    gulp.watch('./src/javascript/**/*', gulp.series('buildjs'))
-});
-
-//faz includes e tratamentos com o arquivos html
+// Faz as inclusões e tratamentos necessários no html
+// --------------------------------------------------
 gulp.task('html', function(){
     return gulp.src([
         './src/**/*.html',
@@ -54,26 +53,39 @@ gulp.task('html', function(){
         .pipe(gulp.dest('./dist/'))
 })
 
-// melhora a performance das imagens
+// Melhora a performance das imagens
+// --------------------------------------------------
 gulp.task('imagemin', function() {
     return gulp.src('./src/imagens/**/*')
            .pipe(imagemin())
            .pipe(gulp.dest('./dist/imagens/'))
 })
 
-// faz o tratamento performático nos arquivos de javascript
+// Faz o tratamento performático nos arquivos de javascript
+// --------------------------------------------------
 gulp.task('buildjs', function() {
     return gulp.src('./src/javascript/**/*')
-        .pipe(concat('app.min.js'))
+        .pipe(concat('app.min.js')) //concatena tudo neste arquivo novo
         .pipe(uglify()) //minifica :3
         .pipe(gulp.dest('./dist/javascript/'))
 })
 
+// Executa a task "copy" e as demais tarefas em paralelo
+// --------------------------------------------------
 gulp.task('default', gulp.series('copy', gulp.parallel('imagemin', 'sass', 'buildjs')), function(done) {
     done()
 })
 
-//servidorzinho :3
+// Vai ficar escutando os eventos <3
+// --------------------------------------------------
+gulp.task('listen', function() {
+    gulp.watch('./src/sass/**/*.scss', gulp.series('sass')); //arquivos que serao monitorados e se for executado uma alteração ele roda a tarefa anterior
+    gulp.watch('./src/**/*.html', gulp.series('html'))
+    gulp.watch('./src/javascript/**/*', gulp.series('buildjs'))
+});
+
+// Servidor lindinho que dá reload :3
+// --------------------------------------------------
 gulp.task('server', function() {
     browserSync.init({
         server: {
@@ -82,7 +94,4 @@ gulp.task('server', function() {
     })
 
     gulp.watch('./dist/**/*').on('change', browserSync.reload);
-    // gulp.watch('./src/sass/**/*.scss', gulp.series('sass'))
-    // gulp.watch('./src/**/*.html', gulp.series('html'))
-    // gulp.watch('./src/javascript/**/*', gulp.series('buildjs'))
 })
