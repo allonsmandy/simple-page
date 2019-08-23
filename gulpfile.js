@@ -26,7 +26,6 @@ gulp.task('clean', function(){
 gulp.task('copy', function() {
     return gulp.src([
             'src/components/**/*', 
-            'src/css/**/*', 
             'src/javascript/**/*', 
             'src/imagens/**/*'], 
             {"base": "src"})
