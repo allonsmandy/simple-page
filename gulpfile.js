@@ -79,7 +79,7 @@ gulp.task('default', gulp.series('copy', gulp.parallel('imagemin', 'sass', 'buil
 // Vai ficar escutando os eventos <3
 // --------------------------------------------------
 gulp.task('listen', function() {
-    gulp.watch('./src/sass/**/*.scss', gulp.series('sass')); //arquivos que serao monitorados e se for executado uma alteração ele roda a tarefa anterior
+    gulp.watch('./src/sass/**/*.scss', gulp.series('sass')); 
     gulp.watch('./src/**/*.html', gulp.series('html'))
     gulp.watch('./src/javascript/**/*', gulp.series('buildjs'))
 });
