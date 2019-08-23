@@ -2,7 +2,6 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
-// var uglifycss = require('gulp-uglifycss');
 var include = require('gulp-file-include');
 var clean = require('gulp-clean')
 var autoprefixer = require('gulp-autoprefixer');
@@ -38,18 +37,12 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./dist/css/')); 
 })
 
-// gulp.task('css', function() {
-//     gulp.src('./src/css/*.css')
-//         .pipe(uglifycss({
-//             "uglyComments": true
-//         }))
-//         .pipe(gulp.dest('./dist/css/'));
-// })
 
-// gulp.task('listen', function() {
-//     gulp.watch('./src/sass/**/*.scss', gulp.series('sass')); //arquivos que serao monitorados e se for executado uma alteração ele roda a tarefa anterior
-//     gulp.watch('./src/css/*.css', gulp.series('css'))
-// });
+gulp.task('listen', function() {
+    gulp.watch('./src/sass/**/*.scss', gulp.series('sass')); //arquivos que serao monitorados e se for executado uma alteração ele roda a tarefa anterior
+    gulp.watch('./src/**/*.html', gulp.series('html'))
+    gulp.watch('./src/javascript/**/*', gulp.series('buildjs'))
+});
 
 //faz includes e tratamentos com o arquivos html
 gulp.task('html', function(){
@@ -89,7 +82,7 @@ gulp.task('server', function() {
     })
 
     gulp.watch('./dist/**/*').on('change', browserSync.reload);
-    gulp.watch('./src/sass/**/*.scss', gulp.series('sass'))
-    gulp.watch('./src/**/*.html', gulp.series('html'))
-    gulp.watch('./src/javascript/**/*', gulp.series('buildjs'))
+    // gulp.watch('./src/sass/**/*.scss', gulp.series('sass'))
+    // gulp.watch('./src/**/*.html', gulp.series('html'))
+    // gulp.watch('./src/javascript/**/*', gulp.series('buildjs'))
 })
