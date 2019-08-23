@@ -11,6 +11,7 @@ var imagemin = require('gulp-imagemin');
 var cssnano = require('gulp-cssnano');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var rename = require('gulp-rename');
 var browserSync = require('browser-sync');
 
 // Limpa a pasta dist
@@ -70,9 +71,21 @@ gulp.task('buildjs', function() {
         .pipe(gulp.dest('./dist/javascript/'))
 })
 
-// Executa a task "copy" e as demais tarefas em paralelo
+// Otimização do svg
 // --------------------------------------------------
-gulp.task('default', gulp.series('copy', gulp.parallel('imagemin', 'sass', 'buildjs')), function(done) {
+gulp.task('svgmin', function() {
+    return gulp.src(['./src/inc/icons/*.svg', '!./src/inc/icons/*.min.svg'])
+        .pipe(imagemin()) //minifica :3
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(gulp.dest('./src/inc/icons/'))
+
+})
+
+// Executa a task "html" e "copy", depois as demais tarefas em paralelo
+// --------------------------------------------------
+gulp.task('dist', gulp.series('html', 'copy', gulp.parallel('imagemin', 'sass', 'buildjs')), function(done) {
     done()
 })
 
@@ -82,6 +95,10 @@ gulp.task('listen', function() {
     gulp.watch('./src/sass/**/*.scss', gulp.series('sass')); 
     gulp.watch('./src/**/*.html', gulp.series('html'))
     gulp.watch('./src/javascript/**/*', gulp.series('buildjs'))
+    gulp.watch(
+        ['./src/inc/icons/*.svg',
+        '!./src/inc/icons/*.min.svg'
+        ], gulp.series('svgmin'))
 });
 
 // Servidor lindinho que dá reload :3
