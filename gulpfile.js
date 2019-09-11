@@ -88,6 +88,18 @@ gulp.task('dist', gulp.series('html', 'copy', gulp.parallel('imagemin', 'sass', 
     done()
 })
 
+// Servidor lindinho que dá reload :3
+// --------------------------------------------------
+gulp.task('server',  function() {
+    browserSync.init({
+        server: {
+            baseDir: 'dist'
+        }
+    })
+
+    gulp.watch('./dist/**/*').on('change', browserSync.reload);
+})
+
 // Vai ficar escutando os eventos <3
 // --------------------------------------------------
 gulp.task('listen', function() {
@@ -99,15 +111,3 @@ gulp.task('listen', function() {
         '!./src/inc/icons/*.min.svg'
         ], gulp.series('svgmin'))
 });
-
-// Servidor lindinho que dá reload :3
-// --------------------------------------------------
-gulp.task('server', function() {
-    browserSync.init({
-        server: {
-            baseDir: 'dist'
-        }
-    })
-
-    gulp.watch('./dist/**/*').on('change', browserSync.reload);
-})
